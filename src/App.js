@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ListItem from "./ListItem";
+import AddIcon from "@material-ui/icons/Add";
 import "./App.css";
 
 const App = () => {
@@ -28,9 +29,9 @@ const App = () => {
 
   return (
     <>
-      <div className="container">
-        <div className="task-manager">
-          <h1>Task Manager</h1>
+      <div className="task-manager">
+        <h1>Task Manager</h1>
+        <div className="options">
           <input
             type="text"
             placeholder="Add a Task"
@@ -38,15 +39,13 @@ const App = () => {
             value={task}
             onChange={inputEvent}
           ></input>
-          <button onClick={addTask}>+</button>
-          <ol>
-            {list.map((Item, i) => {
-              return (
-                <ListItem id={i} key={i} item={Item} onSelect={deleteItem} />
-              );
-            })}
-          </ol>
+          <button onClick={addTask}>
+            <AddIcon />
+          </button>
         </div>
+        {list.map((Item, i) => {
+          return <ListItem id={i} key={i} item={Item} onSelect={deleteItem} />;
+        })}
       </div>
     </>
   );
