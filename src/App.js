@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import ListItem from "./ListItem";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [task, setTask] = useState("");
+  const [list, setList] = useState([]);
+
+  function inputEvent(e) {
+    const value = e.target.value;
+    setTask(value);
+  }
+
+  function addTask() {
+    setList((preItems) => {
+      return [...preItems, task];
+    });
+    setTask("");
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="container">
+        <div className="task-manager">
+          <h1>Task Manager</h1>
+          <input
+            type="text"
+            placeholder="Add a Task"
+            name="task"
+            value={task}
+            onChange={inputEvent}
+          ></input>
+          <button onClick={addTask}>+</button>
+          <ol>
+            {list.map((Item) => {
+              return <ListItem item={Item} />;
+            })}
+          </ol>
+        </div>
+      </div>
+    </>
   );
-}
+};
 
 export default App;
