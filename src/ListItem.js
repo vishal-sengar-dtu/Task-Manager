@@ -3,7 +3,13 @@ import React from "react";
 const ListItem = (props) => {
   return (
     <>
-      <button></button>
+      <button
+        onClick={() => {
+          props.onSelect(props.id);
+        }}
+      >
+        x
+      </button>
       <li>{props.item}</li>
     </>
   );

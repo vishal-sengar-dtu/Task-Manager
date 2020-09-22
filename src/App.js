@@ -18,6 +18,14 @@ const App = () => {
     setTask("");
   }
 
+  function deleteItem(id) {
+    setList((preItems) => {
+      return preItems.filter((arrElements, index) => {
+        return index !== id;
+      });
+    });
+  }
+
   return (
     <>
       <div className="container">
@@ -32,8 +40,10 @@ const App = () => {
           ></input>
           <button onClick={addTask}>+</button>
           <ol>
-            {list.map((Item) => {
-              return <ListItem item={Item} />;
+            {list.map((Item, i) => {
+              return (
+                <ListItem id={i} key={i} item={Item} onSelect={deleteItem} />
+              );
             })}
           </ol>
         </div>
