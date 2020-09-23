@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ListItem from "./ListItem";
-import AddIcon from "@material-ui/icons/Add";
+import IconButton from "@material-ui/core/IconButton";
 import "./App.css";
 
 const App = () => {
@@ -30,7 +30,6 @@ const App = () => {
   return (
     <>
       <div className="task-manager">
-        <h1>Task Manager</h1>
         <div className="options">
           <input
             type="text"
@@ -38,10 +37,9 @@ const App = () => {
             name="task"
             value={task}
             onChange={inputEvent}
+            className="input-field"
           ></input>
-          <button onClick={addTask}>
-            <AddIcon />
-          </button>
+          <IconButton onClick={addTask}>Add</IconButton>
         </div>
         {list.map((Item, i) => {
           return <ListItem id={i} key={i} item={Item} onSelect={deleteItem} />;

@@ -1,22 +1,21 @@
+::placeholder {
+  color: white;
+  opacity: 1;
+}
+
 .task-manager {
   border-radius: 10px;
-  border: 5px solid white;
+  border: 2px solid rgb(73, 34, 105);
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
   transition: all 0.2s;
   width: 400px;
-  height: 600px;
-  background-image: url("./task-manager-background.jpg");
-  background-size: cover;
+  height: 560px;
+  background-color: rgb(73, 34, 105);
   padding: 20px;
-  padding-top: 0px;
-  color: rgb(104, 96, 101);
-  margin: 55px auto;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  color: rgb(255, 255, 255);
+  margin: 60px auto;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
 }
 
 .task-manager:hover {
@@ -26,31 +25,29 @@
 
 .options {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
 }
 
-.options input {
+.input-field {
   width: 70%;
-  padding: 10px;
-  margin-right: 2px;
+  padding: 0px 20px 0 20px;
+  margin-right: 20px;
   outline: none;
-  border: 1px solid rgb(163, 157, 157);
+  border: 1px solid teal;
   border-radius: 5px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
   font-size: 1rem;
-  color: rgb(128, 126, 126);
-  background-color: rgb(237, 236, 238);
+  color: rgb(255, 255, 255);
+  background-color: teal;
 }
 
 .options button {
   cursor: pointer;
   border-radius: 5px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  padding: 10px;
-  border: 1px solid rgb(163, 157, 157);
-  background-color: rgb(237, 236, 238);
+  padding: 15px 25px;
+  border: 1px solid #e2970b;
+  background-color: #e2970b;
   color: rgb(0, 0, 0);
+  font-size: 1.1rem;
   outline: none;
 }
